@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Survey</title>
+    </head>
+    <body>
+        <form action="URL" method ="post">
+            <h2>관심있는 항목을 체크해주세요.</h2><br>
+            음악 <input type = "checkbox" value ="1">
+            게임 <input type = "checkbox" value ="2">
+            액티비티 <input type = "checkbox" value ="3">
+        </form>
+        <hr>
+        <form action="URL" method ="post">
+            <h2>페이지의 내용이 유익했나요?</h2><br>
+            매우 무익 <input type = "radio"name = "good" value="1">
+            다소 무익 <input type = "radio"name = "good" value="2">
+            보통 <input type = "radio"name = "good" value="3">
+            다소 유익 <input type = "radio"name = "good" value="4">
+            매우 유익 <input type = "radio"name = "good" value="5">
+        </form>
+        <hr>
+        <form name ="하고싶은 말"value="" action="URL" method ="post">
+            <h2>추가로 하고싶은 말을 적어주세요.</h2>
+            <textarea cols="20" rows="4">
+                내용을 입력하세요.
+            </textarea>
+            <input type ="reset" value ="초기화">
+            <input type ="submit" value ="제출">
+        </form>
+    </body>
+</html>
