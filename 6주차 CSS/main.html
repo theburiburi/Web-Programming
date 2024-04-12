@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>walk the moon</title>
+        <style>
+            body{
+                background: skyblue;
+            }
+            .title{
+                text-align: center;
+                color: gold;
+            }
+            .shadow{
+                text-align: center;
+                color: gold;
+                box-shadow: 10px 20px 40px 1px blue;
+            }
+            .visibility{
+                visibility: hidden;
+            }
+            span.class{
+                display: block;
+                color: blue;
+                background: red;
+
+                height: 50px;
+                width: 60px;
+                border: 10px solid gray;
+                padding: 20px;
+                margin: 50px;
+                text-align: center;
+            }
+            div > div{
+                display: inline-block;
+
+                width: 50px;
+                height: 40px;
+                padding: 10px;
+                border: 5px dotted purple;
+                margin: 40px;
+            }
+            div > ol{
+                display: inline-block;
+                color: blueviolet;
+                font-size: 3ep;
+                font-style: oblique;
+            }
+
+            .hide{
+                visibility: hidden;
+            }
+            .container:hover .hide{
+                visibility: visible;
+                color: red;
+                font-size: 3ep;
+            }
+
+            #fixed{
+                position: fixed;
+                top: 30px;
+                right: 30px;
+                width: 150px;
+                height: 30px;
+                padding: 10px;
+                background: sandybrown;
+                overflow: scroll;
+                vertical-align: center;
+                text-align: center;
+                border: 10px dotted rebeccapurple;
+                font-size: 20px;
+                font-style: oblique;
+                color: whitesmoke;   
+            }
+        </style>
+    </head>
+    <body>
+        <h1 class="title">한이음 프로젝트</h1>
+        <hr>
+
+
+        <span class="class">여행계획 웹</span>
+        <span class="class">여행계획 앱</span>
+        <div>
+            <div class ="shadow">
+                한이음 멤버
+            </div>
+            <ol class="container">
+                <li>장규</li>
+                <li>상범</li>
+                <li>진성</li>
+                <li>의재</li>
+                <li>다음 <span class="hide">민지</span> 빈칸은 누구일까요?</li>
+            </ol>
+            
+        </div>
+        <div id="fixed">10% 할인 쿠폰   사용기한:2023년 4월10일</div>
+    </body>
+</html>

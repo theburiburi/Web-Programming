@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> 박스 모델 </title>
+        <style>
+            p{
+                background: #90D000;
+                width: 300px;
+                height: 60px;
+                padding: 20px;
+                border :20px solid lightgray;
+            }
+            #round1 {border-radius: 50px;}
+            #round2 {border-radius: 0px 20px 40px 60px;}
+            #round3 {border-radius: 0px 20px 40px;}
+            #round4 {border-radius: 0px 20px;}
+            #round5 {border-radius: 50px; border-style: dotted;}
+
+            body {background-color: ghostwhite; }
+            span {background-color: deepskyblue;}
+            div.box {
+                background-color: yellow;
+                border-style : solid;
+                border-color: peru;
+
+                margin : 40px;
+                border-width: 30px;
+                padding : 20px;
+            }
+            div{
+                border: 2px solid yellowgreen;
+                color: blue;
+                background: aliceblue;
+
+                display: inline-block;
+                height: 50px;
+                width: 50px;
+                border: 1px solid lightgray;
+                text-align: center;
+                color: white;
+                background: red;
+            }
+            #down:hover{
+                position: relative;
+                left:20px;
+                top:20px;
+                background: green;
+            }
+            #up:hover{
+                position: relative;
+                right:20px;
+                top:-20px;
+                background: green;
+            }
+            span{
+                border: 3px dotted red;
+                background-color: yellow;
+            }
+        </style>
+    </head>
+    <body>
+        <p style="cursor: crosshair">십자 모양 커서</p>
+        <p style="cursor: help">도움말 모양 커사</p>
+        <p style="cursor: pointer">포인터 모양 커서</p>
+        <p style="cursor: progress">프로그램 실행 중 모양 커서</p>
+        <p style="cursor: n-resize">상하 크기 조절 모양 커서</p>
+
+        <h3>둥근 모서리 테두리</h3>
+        <hr>
+        <p id="round1"> 반지름 50픽셀의 둥근 모서리 </p>
+        <p id="round2"> 반지름 0, 20, 40, 60 둥근 모서리</p>
+        <p id="round3"> 반지름 0, 20, 40, 20 둥근 모서리</p>
+        <p id="round4"> 반지름 0, 20, 0, 20 둥근 모서리</p>
+        <p id="round5"> 반지름 50의 둥근 점선 모서리</p>
+        <div class ="box">
+            <span>DIVDIVDIV</span>
+        </div>
+
+        <hr>
+        <div overflow : hidden visible scroll>T aaaaasdasdasdasdsadasdsaasdasdasddsadas</div>
+        <div id="down">h</div>
+        <div>a</div>
+        <div>n</div>
+        <div id="up">k</div>
+        <div>s</div>
+    </body>
+</html>

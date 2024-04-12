@@ -1,0 +1,12 @@
+body {
+    background-color: mistyrose;
+    color : blueviolet;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+h3 { 
+    text-align: center;
+    color: purple
+}
+hr {border: 5px solid yellowgreen;}
+span {color : blue; font-size : 20px;}
