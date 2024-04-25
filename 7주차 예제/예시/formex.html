@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login 페이지</title>
+        <style>
+            body {text-align : center;}
+            .container {display : inline-block;}
+            table {border:2px solid darkgray; border-collapse : collapse;}
+            #td_submit > *{margin-right : 5%; margin-bottom : 3%; float : right;}
+
+            input[type=text], input[type=password] {
+                margin-bottom : 3%; box-shadow : 1px 1px 0px 0px lightgray inset;
+                border:none; border-radius : 5px;
+            }
+            .input_text:hover {background : aliceblue;}
+            .input_text:focus {background-color : lightcyan;}
+
+            input[type=submit], input[type=reset] {
+                background : gainsboro; border : 2px solid gainsboro; border-radius: 3px;
+            }
+            .button:hover {
+                background : lightgray; border : 2px solid lightgray;
+            }
+            .button:active {
+                background : gray; border : 2px inset darkgray;
+            }
+        </style>    
+    </head>
+    <body>
+           <div class="container">
+                <form name="login" action="" method="post">
+                    <img id="img_login" src="login.png" alt="login" width="100px" height="100px">
+                    <table width="250px" height="70px">
+                        <caption>로그인</caption>
+                        <tr>
+                            <td>
+                                <label for="id">ID : </label>
+                            </td>
+                            <td>
+                                <input class="input_text" type="text" name="id">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="ps">PW : </label>
+                            </td>
+                            <td>
+                                <input class="input_text" type="password" name="ps">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="td_submit" colspan="2">
+                                <input class="button" type="reset" value="초기화">
+                                <input class="button" type="submit" value="제출">
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+           </div>
+    </body>
+</html>
+

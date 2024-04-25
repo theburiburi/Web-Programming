@@ -1,0 +1,89 @@
+body {
+    text-align: center;
+}
+body > div{
+    display: inline-block;
+    text-align: center;
+    width: 1300px;
+}
+
+#menubar ul{
+    margin : 0;
+    padding : 0;
+}
+#menubar ul li{
+    display: inline-block;
+    list-style-type: none;
+    padding : 0px 20px;
+    background-color: aqua;
+}
+
+#menubar ul li a{
+    color: black;
+    text-decoration: none; /* 밑줄 없애기 */
+}
+#menubar ul li a:hover{
+    background-color:violet;
+}
+#menubar ul li a:active{
+    background-color:red;
+}
+
+
+p{
+    text-align: center;
+    margin: 0px 50x; /*상하, 좌우*/
+    padding: 0px 10px;
+}
+
+#table {
+    display: inline-block;
+    border: 5px ridge skyblue;
+}
+td, th {border : 1px solid green}
+th:hover, td:hover{background-color: indianred;}
+table:active {
+    border-collapse: collapse;
+}
+
+*/
+#lock{
+    display: inline-block;
+    padding: 30px;
+}
+
+img{
+    transition: font-size 5s;
+}
+
+img:hover{
+    font-size: 500%;
+}
+
+input[type = text], input[type = password]{
+    margin-bottom: 3%; box-shadow: 1px 1px 0px 0px red;
+    border:none; border-radius: 5px;
+    background-color: white;
+}
+
+input[type = text]:hover, input[type = password]:hover{
+    background-color: bisque;
+}
+input[type = text]:focus, input[type = password]:focus{
+    background-color: skyblue;
+}
+
+table {
+    border: 2px solid darkgray;
+}
+
+.container {
+    display: inline-block;
+}
+
+
+#td_submit > *{margin-right: 5%; margin-bottom: 3%; float:right} /* float -> 정렬 */
+
+form{
+    display: inline-block;
+}

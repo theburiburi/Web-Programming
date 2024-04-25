@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset ="utf-8">
+        <link href="main.css" type="text/css" rel="stylesheet">
+        <title>login 페이지</title>
+    </head>
+    <body>
+        <div class="container">
+            <form name="login" action="" method="post">
+                <img src="login.png" alt="login" width="100px" height="100px">
+                <table width="250px" height="70px">
+                    <caption>로그인</caption>
+                    <tr>
+                        <td>
+                            <label for="id">ID : </label>
+                        </td>
+                        <td>
+                            <input class="input_text" type="text" name="id">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="ps">PW : </label>
+                        </td>
+                        <td>
+                            <input class="input_text" type="password" name="ps">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="td_submit" colspan="2"> <!--2개의 열을 하나로 합친다.-->
+                            <input class="button" type="reset" value="초기화">
+                            <input class="button" type="submit" value="제출">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </body>
+</html>
