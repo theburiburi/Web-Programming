@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>사용자 선택에 따른 이미지 출력</title>
+    </head>
+    <body>
+
+        <script>
+            let name = prompt("당신의 이름을 입력해주세요");
+            let img = confirm("배경 이미지를 출력할까요?");
+
+            if(name)
+                document.write("어서오세요 " +name+ "님!");
+            if(img == true)
+                document.write("<br> <img src = '짱구.png' alt = '짱구사진' width = '100px' height = '100px'");
+            else
+                document.write("<br> 출력할 사진이 없어용~");
+        </script>
+    </body>
+</html>

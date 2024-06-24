@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>radio와 checkbox</title>
+        <script>
+            function get_radio(name) {
+                let inputs = document.getElementsByName(name);
+                for(let i = 0; i < inputs.length; i++) {
+                    if(inputs[i].checked) return inputs[i].value;
+                }
+                return null;
+            }
+
+            function get_check(name) {
+                let text = "";
+                let inputs = document.getElementsByName(name);
+                for(let i = 0; i < inputs.length; i++) {
+                    if(inputs[i].checked) text += inputs[i].value + " ";
+                }
+                return text;
+            }
+            
+            function get_result() {
+                let div = document.getElementById("result_div");
+                let radio_answer = get_radio("year_radio");
+                if(radio_answer == null) {
+                    alert("학년을 필수로 선택해주세요!");
+                    div.innerHTML = "입력되지 않았습니다.";
+                    return;
+                }
+                div.innerHTML = radio_answer + ", ";
+                check_answer = get_check("menu_check");
+                
+                if(check_answer.length < 1) div.innerHTML += "선호 메뉴 없음";
+                else div.innerHTML += check_answer + "메뉴 선호";
+            }
+        </script>
+    </head>
+    <body>
+        <h3>학생식당 이용실태조사</h3>
+        <hr>
+        <h4>1. 학년을 선택해주세요.</h4>
+        <input type="radio" name="year_radio" value="1학년">1학년
+        <input type="radio" name="year_radio" value="2학년">2학년
+        <input type="radio" name="year_radio" value="3학년">3학년
+        <input type="radio" name="year_radio" value="4학년">4학년
+        <h4>2. 본인이 좋아하는 메뉴를 선택해주세요.</h4>
+        <label><input type="checkbox" name="menu_check" value="한식">한식</label>
+        <label><input type="checkbox" name="menu_check" value="양식">양식</label>
+        <label><input type="checkbox" name="menu_check" value="중식">중식</label>
+        <label><input type="checkbox" name="menu_check" value="일식">일식</label>
+        <br>
+        <button id="result_button" onclick="get_result()">제출하기</button>
+        <br><br>
+        <div id="result_div">입력되지 않았습니다.</div>
+    </body>
+</html>

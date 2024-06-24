@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>시험 프로그램</title>
+
+        <script>
+            let remain_time = 300;
+
+            function time_set(){
+                remain_time = 0;
+                get_result();
+            }
+
+            function print_time() {
+                let time = document.getElementById("play_time");
+                if (remain_time > 0){
+                    remain_time -= 1;
+                }
+                time.value = "남은시간 " + parseInt(remain_time/60) + "분" + parseInt(remain_time%60) + "초" ;
+            }
+            function clear_interval() {
+                clearTimeout(time_out);
+                clearInterval(time_interval);
+            }
+
+            time_out = setTimeout("time_set()", 30500);
+            time_interval = setInterval("print_time()", 1000);
+
+            function get_radio(name) {
+                let inputs = document.getElementsByName(name);
+                for(let i = 0; i < inputs.length; i++) {
+                    if(inputs[i].checked) return inputs[i].value;
+                }
+                return null;
+            }
+            
+            function get_result() {
+
+                if (remain_time > 0){
+                    let response = confirm("남은 시간이 있습니다. 제출하시겠습니까?");
+                    if(!response){
+                        return;
+                    }
+                }
+
+                let score = 0;
+                let radio_answer1 = get_radio("answer1");
+                let radio_answer2 = get_radio("answer2");
+                let radio_answer3 = get_radio("answer3");
+
+                if((radio_answer1 == null || radio_answer2 ==null || radio_answer3 == null) && remain_time > 0) {
+                    alert("아직 응답하지 않은 문항이 있습니다. 모든 문항에 응답하세요");
+                    return;
+                }
+
+                if (radio_answer1 == "'102'") score += 30;
+                if (radio_answer2 == "3") score += 30;
+                if (radio_answer3 == "0") score += 40;
+                
+                alert("시험이 종료되었습니다. 당신의 점수는 " +score+ "점 입니다.");
+                clear_interval();
+                document.getElementById("button_result").disabled = true;
+            }
+        </script>
+    </head>
+    <body>
+        <p>남은시간: </p>
+        <input type="text" id="play_time" readonly size="30">
+
+        
+
+        <h3>1. 아래코드의 결과값을 입력하시오.</h3>
+        <textarea cols = "30" rows="4">
+const result = (7 + 3 + '2');
+alert(result);
+        </textarea>
+        <form>
+            <input type = "radio" name = "answer1" value = "12">12
+            <input type = "radio" name = "answer1" value = "'12'">'12'
+            <input type = "radio" name = "answer1" value = "'732'">'732'
+            <input type = "radio" name = "answer1" value = "'102'">'102'
+        </form>
+
+        <h3>2. 출력결과로 올바른 것을 고르시오.</h3>
+        <textarea cols = "30" rows="4">
+for (let i=0;i < 10; i++) {
+    if(i % 2 == 0) alert (i);
+}
+        </textarea>
+        <form>
+            <input type = "radio" name = "answer2" value = "0">0,1,2,3,4,5,6,7,8,9,10
+            <input type = "radio" name = "answer2" value = "1">1,3,5,7,9,
+            <input type = "radio" name = "answer2" value = "2">0,2,4,6,8,10
+            <input type = "radio" name = "answer2" value = "3">0,2,4,6,8
+        </form>
+
+
+        <h3>3. 다음 중 올바르지 않은 것을 고르시오.</h3>
+        <form>
+            <input type = "radio" name = "answer3" value = "0">SetTimeOut() 메소드는 일정 시간마다 함수를 반복한다.
+            <input type = "radio" name = "answer3" value = "1">자바 스크립트를 이용해 html 문서의 스타일을 변경할 수 있다.
+            <input type = "radio" name = "answer3" value = "2">setInterval() 메소드는 시간 단위로 ms를 사용한다.
+            <input type = "radio" name = "answer3" value = "3">window는 BOM객체로, 브라우저에 관한 속성을 갖는다.
+        </form>
+        <button id = "button_result" onclick="get_result()">제출하기</button>
+    </body>
+</html>

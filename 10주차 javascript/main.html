@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <script>
+            function gugudan(){
+                let gugudan = prompt("단을 입력하세요");
+                let num = parseInt(gugudan);
+
+                if (isNaN(num) || num < 1 || 9 < num){
+                    alert("1~9 사이의 숫자를 입력하세요");
+                    return;
+                }
+                for (let i=1; i<10; i++){
+                    document.write(num + "X" + i + "=" + num*i + "<br>");
+                }
+            }
+        </script>
+
+    </head>
+    <body>
+        <button onclick="gugudan()">구구단 출력</button>
+        <script>
+            let age = prompt("당신의 나이를 입력하세요.")
+            if (age < 12)
+                document.write("12세 미만은 이용할 수 없는 프로그램입니다.");
+            else{
+                let result = 0;
+                let num = prompt("0부터 입력한 수 까지 홀수의 합을 출력합니다.")
+                for(let i=1; i <= num; i++){
+                    if(i%2 == 1)
+                        result += i;
+                }
+                document.write("계산 결과: "+ result);
+            }
+        </script>
+    </body>
+</html>

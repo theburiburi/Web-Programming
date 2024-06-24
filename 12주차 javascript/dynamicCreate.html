@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head><title>동적 생성과 삭제</title></head>
+<body>
+    <h1 id="title">동적 생성과 삭제</h1>
+    <input id="inputText" type="text" placeholder="내용을 선택하세요">
+    <button onclick="addById('newDiv')">생성</button>
+    <button onclick="removeById('newDiv', 'red')">삭제</button>
+
+    <div id="red" style="height:200px;background-color:red;"></div>
+</body>
+<script>
+   function addById(_id)
+   {
+      let obj = document.createElement("div");
+      obj.innerHTML = document.getElementById("inputText").value;
+      obj.setAttribute("id", "newDiv");
+      obj.style.backgroundColor="green";
+      let parent = document.getElementById("red");
+      parent.appendChild(obj);
+   }
+   function removeById(_id, _parent)
+   {
+      let obj = document.getElementById(_id);
+      if(typeof _parent == 'string')
+      {
+         _parent = document.getElementById(_parent);
+      }
+      _parent.removeChild(obj);
+   }
+</script>
+</html>

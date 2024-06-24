@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>수강신청</title>
+        <script>
+            function check_name() {
+                let name = document.getElementById("name_text").value;
+                if(name.length < 1) {
+                    alert("이름을 입력해주세요!");
+                    return null;
+                }
+                return name;
+            }
+            function get_lecture() {
+                let name = check_name();
+                const sel = document.getElementById("lecture_select");
+                const result = document.getElementById("result_area");
+                let option = sel.options[sel.selectedIndex];
+                if(name == null) return;
+                if(option.value > 0) result.value += option.innerHTML + "\n";
+            }
+        </script>
+    </head>
+    <body>
+        <textarea id="result_area" colos="30" rows="10" 
+        placeholder="강좌를 신청하면 표시됩니다." readonly></textarea><br>
+        이름입력 <input type="text" id="name_text" placeholder="이름 입력"><br>
+        <select id="lecture_select" onchange="get_lecture()">
+            <option value="0">강좌 선택</option>
+            <option value="1">인터넷프로그래밍(1)</option>
+            <option value="2">자아와명상(2)</option>
+            <option value="3">불교와인간(3)</option>
+        </select>
+    </body>
+</html>

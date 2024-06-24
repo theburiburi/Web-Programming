@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>onclick</title>
+        <script>
+            function set_color() {
+                color = document.getElementById("color_text");
+                square = document.getElementById("div_square");
+                square.style.backgroundColor = color.options[color.selectedIndex].value;
+            }
+        </script>
+    </head>
+    <body style="text-align : center;">
+        <div id="div_square"
+        style="display : inline-block;
+        width : 200px; height : 200px;
+        background-color : black;"></div>
+        <br>
+        색상선택 
+        <select name="color_text" id="color_text">
+            <option value="red">red</option>
+            <option value="green">green</option>
+            <option value="blue">blue</option>
+        </select>
+        <button onclick="set_color()">색 변경</button>
+    </body>
+</html>

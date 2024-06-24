@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head><title>DOM 객체 찾기</title></head>
+<body>
+    <h1 id="title">잔나비 - 사랑하긴했었나요...(후략)</h1>
+    <button onclick="getByTagName('span')">태그로 찾기</button>
+    <button onclick="getByName('my')">name으로 찾기</button>
+    <button onclick="getByClass('love')">class로 찾기</button>
+    <button onclick="getById('title')">id로 찾기</button>
+    <p>
+        <span>사랑</span>하긴 했었나요<br>
+        스쳐가는 인연이었나요 짧지 않은<br>
+        우리 함께했던 시간들이<br>
+        자꾸 <span name="my">내</span> 마음을 가둬두네<br>
+        누가 <span name="my">내</span> 가슴에다 불을 질렀나<br>
+        누가 <span name="my">내</span> 심장에다 못을 박았나<br>
+        그대의 눈빛은 날 얼어붙게 해<br>
+        그대여 다시 <span name="my">내</span>게 마음을 주오<br>
+        ooh ooh baby I need you<br>
+        <span>사랑</span>하긴 했었나요<br>
+        스쳐가는 인연이었나요 짧지 않은<br>
+        우리 함께했던 시간들이<br>
+        자꾸 <span name="my">내</span> 마음을 가둬두네<br>
+        <span class="love">love</span> you <span class="love">love</span>
+        you <span class="love">love</span> again<br>
+        <span class="love">love</span> again with you<br>
+        짧지 않은 우리 함께했던 시간들이<br>
+        자꾸 <span name="my">내</span> 마음을 가둬두네<br>
+        ooh ooh baby I need you<br>
+    </p>
+</body>
+<script>
+    function getByName(_name) {
+        let domLists = document.getElementsByName(_name);
+        for (i = 0; i < domLists.length; i++) {
+            domLists[i].style.backgroundColor = "blue";
+            domLists[i].style.color = "white";
+        }
+    }
+    function getByClass(_class) {
+        let domLists = document.getElementsByClassName(_class);
+        for (i = 0; i < domLists.length; i++) {
+            domLists[i].style.backgroundColor = "green";
+            domLists[i].style.color = "white";
+        }
+    }
+    function getById(_id) {
+        let dom = document.getElementById(_id);
+        dom.style.backgroundColor = "red";
+        dom.style.color = "white";
+    }
+    function getByTagName(_tag) {
+        let domLists = document.getElementsByTagName(_tag);
+        for (i = 0; i < domLists.length; i++) {
+            domLists[i].style.backgroundColor = "gray";
+        }
+    }
+</script>
+</html>

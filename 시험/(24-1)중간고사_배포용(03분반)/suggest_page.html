@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>인터넷프로그래밍 소개</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="인터넷프로그래밍에 대한 간단한 소개">
+        <meta name="keywords" content="인터넷프로그래밍, HTML, CSS">
+        <meta name="author" content="인터넷프로그래밍">
+        <link href="main.css" type="text/css" rel="stylesheet">    
+    </head>
+    <body id="main-page">
+        <div id="suggest-content">
+            <form>
+                <!-- 5. (1)  폼 요소 그룹핑 설정 -->
+                    입력 정보
+                    <div id="suggest-content">
+                        <span class="info">전공</span>
+                        <select name="major">
+                            <option>멀티미디어공학</option>
+                            <option>화공생물공학</option>
+                            <option>전자전기공학</option>
+                            <option>기타 전공</option>
+                        </select>
+                        <br>
+                        <span class="info">학년</span>
+                        <input type="radio" name="grade">1학년
+                        <input type="radio" name="grade">2학년
+                        <input type="radio" name="grade">3학년
+                        <input type="radio" name="grade">4학년
+                        <br>
+                        <span class="info">관심분야</span>
+                        <input type="checkbox" checked>인공지능
+                        <input type="checkbox">빅데이터분석
+                        <input type="checkbox">자율주행차
+                        <input type="checkbox">블록체인
+                        <br>
+                        <span class="info">건의사항</span>
+                        <textarea rows="4" cols="60"></textarea>							
+                        <br>
+                        <div id="send">			<!-- 5. (1)  가운데 정렬 -->
+                            <input type="submit" value="보내기">
+                            <input type="reset" value="취소">
+                        </div>
+                    </div>
+
+            </form>
+        </body>
+    </html>

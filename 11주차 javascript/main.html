@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script>
+            alert("로또 당첨을 노려보세요");
+            let lotto_num = prompt("공백으로 구분된 6개의 숫자를 입력하세요");
+            
+            let userArray = lotto_num.split(" ");
+            for (let i=0; i<userArray.length; i++){
+                userArray[i] = parseInt(userArray[i])
+            }
+
+            let lottoArray = [];
+            while (lottoArray.length < 6) {
+                let randomNum = Math.floor(Math.random() * 50) + 1;
+                if (!lottoArray.includes(randomNum)) {
+                    lottoArray.push(randomNum);
+                }
+            }
+
+            let matchCount = 0;
+
+            for (let i = 0; i < userArray.length; i++) {
+                if (userArray.includes(lottoArray[i])) {
+                    matchCount++;
+                }
+            }
+            userArray.sort();
+            lottoArray.sort();
+
+            alert("당신의 숫자: " + userArray.join(", ") + "\n당첨 번호: " + lottoArray.join(", ") + "\n일치하는 숫자 개수: " + matchCount);
+
+            let now = new Date();
+            let deadline = new Date(now.getTime() + 3 * 24 * 60 * 60 * 1000);
+            deadline.setHours(0, 0, 0, 0);
+
+            document.write("오늘의 날짜 : " + now.toLocaleString() + "<hr>");
+            document.write("로또 마감 날짜 : " + deadline.toLocaleString() + "<hr>");
+            document.write("금주의 로또 번호 : " + lottoArray.join(", ") + "<br>");
+        </script>
+    </body>
+</html>

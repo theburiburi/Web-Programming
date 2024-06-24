@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>타이머</title>
+        <script>
+            let enter_date = new Date();
+            let entered_time = enter_date.getTime();
+
+            function print_minutes() {
+                alert("1분이 지났습니다.");
+            }
+            function print_time() {
+                let current_date = new Date();
+                let time = document.getElementById("play_time");
+                let current_time = current_date.getTime() - entered_time;
+                time.value = "현재 " + parseInt(current_time/60000) + "분이 지났습니다.";
+            }
+            function cleare_interval() {
+                clearTimeout(time_out);
+                clearInterval(time_interval);
+            }
+
+            time_out = setTimeout("print_minutes()", 60000);
+            time_interval = setInterval("print_time()", 1000);
+        </script>
+    </head>
+    <body>
+        <input type="text" id="play_time" readonly size="30">
+        <button onclick="clear_interval()">인터벌 정지</button>
+        
+    </body>
+</html>

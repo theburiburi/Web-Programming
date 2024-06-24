@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title> URL에 자바스크립트 작성 </title>
+    </head>
+    <body>
+        <h3>링크의 href에 자바스크립트 작성</h3>
+        <hr>
+        <a href="javascript:alert('송민교 돼지입니까?')"> 클릭해보세요 </a>
+        <script>
+            let x;
+            function f(){
+                let y;
+                x = 10;
+                y = 20;
+                z = 30;
+                if(y == 20){
+                    let b = 40;
+                    b++;
+                    document.write("if블록 내 블록변수 b=" + b + "<br>");
+                }
+                document.write("함수 f() 내 지역변수 y = " + y + "<br>");
+            }
+            f();
+            document.write("전역변수 x=" + x + "<br>");
+            document.write("전역변수 z=" + z);
+            
+            let score = prompt("송민교의 점수를 입력하세요", 100);
+            score = parseInt(score);
+            if (score >= 90)
+                grade = 'A';
+            else (score >= 80)
+                grade = 'B';
+
+            document.write("<br> grade = "+ grade);
+            document.write("<h3>Welcom!</h3>");
+            document.write("2+5는 <br>");
+            document.write("<mark>7 입니다.</mark>");
+
+            let ret = confirm("전송할까요");
+            if(ret == true){
+                document.write("클릭했습니다.");
+            }
+            else{
+                document.write("취소했습니다.");
+            }
+        </script>
+    </body>
+</html>
